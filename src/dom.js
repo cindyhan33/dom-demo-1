@@ -116,18 +116,18 @@ window.dom = {
     //因为children是伪数组，所以要把它变成数组
   },
   next(node) {
-    let x = node.nextSibling;
-    while (x && x.nodeType === 3) {
-      x = x.nextSibling;
+    let nextNode = node.nextSibling;
+    while (nextNode && nextNode.nodeType === 3) {
+      nextNode = nextNode.nextSibling;
     }
-    return x;
+    return nextNode;
   },
   previous(node) {
-    let x = node.previousSibling;
-    while (x && x.nodeType === 3) {
-      x = x.previousSibling;
+    let previousNode = node.previousSibling;
+    while (previousNode && previousNode.nodeType === 3) {
+      previousNode = previousNode.previousSibling;
     }
-    return x;
+    return previousNode;
   },
   index(node) {
     const list = dom.children(node.parentNode);
